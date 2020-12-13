@@ -84,7 +84,14 @@ func fcAPI(client *http.Client, path, body string) error {
 		return e
 	}
 	req.Header.Set("Content-Type", "application/json; charset=utf-8")
+	if path == "network-interfaces/1" {
+		fmt.Println("req", req)
+	}
 	rsp, e := client.Do(req)
+	if path == "network-interfaces/1" {
+		fmt.Println("rsp", rsp)
+		fmt.Println("e", e)
+	}
 	if e != nil {
 		return e
 	}

@@ -14,6 +14,10 @@ done
 SYS=${DIR}/sys
 mkdir -p ${SYS}
 
+# Me add
+chown -R cc:cc ${DIR}
+rm -f /tmp/fc-*
+
 date                     > ${SYS}/sys_date.txt
 cat /proc/cpuinfo        > ${SYS}/sys_cpuinfo.txt
 cat /proc/cmdline        > ${SYS}/sys_kernel-cmdline.txt

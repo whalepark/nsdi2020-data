@@ -17,7 +17,8 @@ TARGETS += ../../img/bench-ssh-vmlinuz
 TARGETS += ../../img/bench-ssh-disk.img
 
 LK := ../../bin/linuxkit
-LOOP ?= /dev/loop0
+# LOOP ?= /dev/loop0
+LOOP ?= $(shell losetup -f)
 
 build: $(TARGETS)
 
